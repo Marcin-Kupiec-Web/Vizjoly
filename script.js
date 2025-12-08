@@ -69,35 +69,49 @@ window.addEventListener('scroll', () => {
     }, 10);
 });
 
-// Project tabs functionality with smooth transitions
+// Project tabs functionality with smooth transitions and accessibility
 const tabButtons = document.querySelectorAll('.tab-btn');
 const projectPanels = document.querySelectorAll('.project-panel');
 
-tabButtons.forEach(button => {
+// Keyboard navigation for tabs
+const handleTabNavigation = (currentIndex, direction) => {
+    const nextIndex = direction === 'next' 
+        ? (currentIndex + 1) % tabButtons.length 
+        : (currentIndex - 1 + tabButtons.length) % tabButtons.length;
+    
+    tabButtons[nextIndex].focus();
+    tabButtons[nextIndex].click();
+};
+
+tabButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
         const targetProject = button.getAttribute('data-project');
         
         // Remove active class from all buttons and panels
-        tabButtons.forEach(btn => {
+        tabButtons.forEach((btn, btnIndex) => {
             btn.classList.remove('active');
-            btn.style.transform = 'scale(0.95)';
-        });
-        projectPanels.forEach(panel => {
-            panel.classList.remove('active');
+            btn.setAttribute('aria-selected', 'false');
+            btn.style.transform = '';
+            
+            const panel = projectPanels[btnIndex];
+            if (panel) {
+                panel.classList.remove('active');
+                panel.setAttribute('hidden', '');
+            }
         });
         
-        // Add active class to clicked button with animation
+        // Add active class to clicked button
         button.classList.add('active');
-        setTimeout(() => {
-            button.style.transform = 'scale(1)';
-        }, 50);
+        button.setAttribute('aria-selected', 'true');
+        button.style.transform = 'scale(1.05)';
         
         // Show corresponding panel with fade animation
         const targetPanel = document.getElementById(targetProject);
         if (targetPanel) {
-            setTimeout(() => {
+            targetPanel.removeAttribute('hidden');
+            requestAnimationFrame(() => {
                 targetPanel.classList.add('active');
-            }, 100);
+            });
         }
         
         // Scroll to projects section if not visible
@@ -111,6 +125,25 @@ tabButtons.forEach(button => {
                     behavior: 'smooth'
                 });
             }
+        }
+    });
+    
+    // Keyboard navigation
+    button.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            handleTabNavigation(index, 'next');
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            handleTabNavigation(index, 'prev');
+        } else if (e.key === 'Home') {
+            e.preventDefault();
+            tabButtons[0].focus();
+            tabButtons[0].click();
+        } else if (e.key === 'End') {
+            e.preventDefault();
+            tabButtons[tabButtons.length - 1].focus();
+            tabButtons[tabButtons.length - 1].click();
         }
     });
 });
@@ -160,19 +193,33 @@ const observer = new IntersectionObserver((entries) => {
 document.addEventListener('DOMContentLoaded', () => {
     const animateElements = document.querySelectorAll('.project-card, .stat-item, .contact-item, .section-header');
     
-    animateElements.forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(40px) scale(0.95)';
-        el.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-        el.style.transitionDelay = `${index * 0.1}s`;
-        observer.observe(el);
-    });
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (!prefersReducedMotion) {
+        animateElements.forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(40px) scale(0.95)';
+            el.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            el.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(el);
+        });
+    } else {
+        // Skip animations for users who prefer reduced motion
+        animateElements.forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+        });
+    }
 });
 
-// Enhanced parallax effect to hero shapes
+// Enhanced parallax effect to hero shapes with reduced motion support
 let parallaxTicking = false;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-window.addEventListener('scroll', () => {
+const handleParallax = () => {
+    if (prefersReducedMotion.matches) return;
+    
     if (!parallaxTicking) {
         window.requestAnimationFrame(() => {
             const scrolled = window.pageYOffset;
@@ -181,26 +228,30 @@ window.addEventListener('scroll', () => {
             shapes.forEach((shape, index) => {
                 const speed = (index + 1) * 0.15;
                 const rotation = scrolled * 0.05;
-                shape.style.transform = `translate(${scrolled * speed * 0.1}px, ${scrolled * speed * 0.1}px) rotate(${rotation}deg)`;
+                shape.style.transform = `translate3d(${scrolled * speed * 0.1}px, ${scrolled * speed * 0.1}px, 0) rotate(${rotation}deg)`;
             });
             
             parallaxTicking = false;
         });
         parallaxTicking = true;
     }
-});
+};
 
-// Enhanced hover effect to project cards with glow
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-12px) scale(1.01)';
-        this.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+window.addEventListener('scroll', handleParallax, { passive: true });
+
+// Enhanced hover effect to project cards with glow (only on hover-capable devices)
+if (window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-12px) scale(1.01)';
+            this.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
     });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-    });
-});
+}
 
 // Enhanced stats counter animation with easing
 const animateCounter = (element, target, duration = 2500) => {
@@ -324,19 +375,34 @@ interactiveElements.forEach(element => {
     });
 });
 
-// Smooth page load animation
+// Smooth page load animation (respects reduced motion)
 window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.5s ease-in';
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
-    setTimeout(() => {
+    if (!prefersReducedMotion) {
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.5s ease-in';
+        
+        requestAnimationFrame(() => {
+            document.body.style.opacity = '1';
+        });
+    } else {
         document.body.style.opacity = '1';
-    }, 100);
+    }
 });
 
-// Add scroll progress indicator (optional enhancement)
+// Add scroll progress indicator with reduced motion support
 const createScrollProgress = () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+    
     const progressBar = document.createElement('div');
+    progressBar.setAttribute('role', 'progressbar');
+    progressBar.setAttribute('aria-label', 'Postęp przewijania strony');
+    progressBar.setAttribute('aria-valuemin', '0');
+    progressBar.setAttribute('aria-valuemax', '100');
+    progressBar.setAttribute('aria-valuenow', '0');
+    progressBar.className = 'scroll-progress';
     progressBar.style.cssText = `
         position: fixed;
         top: 0;
@@ -347,14 +413,23 @@ const createScrollProgress = () => {
         z-index: 10000;
         transition: width 0.1s ease;
         box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        pointer-events: none;
     `;
     document.body.appendChild(progressBar);
     
+    let ticking = false;
     window.addEventListener('scroll', () => {
-        const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrolled = (window.scrollY / windowHeight) * 100;
-        progressBar.style.width = scrolled + '%';
-    });
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrolled = Math.min((window.scrollY / windowHeight) * 100, 100);
+                progressBar.style.width = scrolled + '%';
+                progressBar.setAttribute('aria-valuenow', Math.round(scrolled));
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
 };
 
 createScrollProgress();
