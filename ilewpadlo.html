@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IleWpadło - Lekka aplikacja fintech dla studentów do kontroli zarobków i budżetu. Oblicz ile naprawdę zarobisz na rękę.">
+    <title>IleWpadło - Kontrola Zarobków i Budżetu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <span class="logo-text">IleWpadło</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#calculator" class="nav-link">Kalkulator</a></li>
+                    <li><a href="#features" class="nav-link">Funkcje</a></li>
+                    <li><a href="#about" class="nav-link">O aplikacji</a></li>
+                    <li><a href="index.html" class="nav-link">← Vizjoly</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-overlay"></div>
+            <div class="animated-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">IleWpadło</span>
+                    <span class="title-subtitle">Kontrola Zarobków i Budżetu</span>
+                </h1>
+                <p class="hero-description">
+                    Lekka aplikacja fintech dla studentów. Szybko oblicz ile naprawdę zarobisz "na rękę" 
+                    dla różnych form współpracy i zarządzaj codziennym budżetem. 
+                    Zlecenie, dzieło, B2B, etat - wszystko w jednym miejscu.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#calculator" class="btn btn-primary">Zobacz Kalkulator</a>
+                    <a href="#features" class="btn btn-secondary">Funkcje</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Kalkulator Wynagrodzeń</h2>
+                <p class="section-subtitle">Oblicz ile naprawdę zarobisz na rękę</p>
+            </div>
+            
+            <div class="projects-content">
+                <div class="project-panel active">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder ilewpadlo-bg">
+                                <div class="project-logo">
+                                    <i class="fas fa-calculator" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                                    <div style="font-size: 2rem;">Kalkulator</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badge">Wsparcie dla Wszystkich Form</div>
+                            <h3 class="project-title">Różne Formy Umów</h3>
+                            <p class="project-description">
+                                IleWpadło obsługuje wszystkie popularne formy współpracy: umowa zlecenie, 
+                                umowa o dzieło, B2B (ryczałt, liniowy, skala podatkowa) oraz umowa o pracę. 
+                                Automatyczne obliczenia składek ZUS, podatku PIT i składki zdrowotnej.
+                            </p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Umowa zlecenie</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Umowa o dzieło</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>B2B (ryczałt/liniowy/skala)</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Umowa o pracę</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Ulga dla młodych (<26 lat)</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Koszty autorskie (do 85 528 zł)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Funkcje Aplikacji</h2>
+                <p class="section-subtitle">Wszystko czego potrzebujesz do kontroli finansów</p>
+            </div>
+            
+            <div class="projects-content">
+                <div class="project-panel active">
+                    <div class="project-card">
+                        <div class="project-info">
+                            <div class="project-badge">Grafik Dyżurów</div>
+                            <h3 class="project-title">Zarządzanie Dyżurami</h3>
+                            <p class="project-description">
+                                Dodawaj i zarządzaj dyżurami. Automatyczne obliczanie zarobków z grafiku. 
+                                Powiadomienia przed dyżurami (Premium). Eksport do kalendarza i eksport PDF (Premium).
+                            </p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Dodawanie i edycja dyżurów</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Automatyczne obliczanie zarobków</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Powiadomienia (Premium)</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Eksport do kalendarza</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <div class="project-placeholder ilewpadlo-bg">
+                                <div class="project-logo">
+                                    <i class="fas fa-calendar-alt" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                                    <div style="font-size: 2rem;">Grafik</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-content" style="margin-top: 3rem;">
+                <div class="project-panel active">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder ilewpadlo-bg">
+                                <div class="project-logo">
+                                    <i class="fas fa-wallet" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                                    <div style="font-size: 2rem;">Tryb na życie</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badge">Budżetowanie</div>
+                            <h3 class="project-title">Tryb na Życie</h3>
+                            <p class="project-description">
+                                Obliczanie dziennego budżetu po odjęciu stałych kosztów. Zarządzanie oszczędnościami. 
+                                Kontrola codziennych wydatków. Wiesz dokładnie ile możesz wydać każdego dnia.
+                            </p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Dzienny budżet</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Zarządzanie oszczędnościami</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Kontrola wydatków</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Stałe koszty</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-content" style="margin-top: 3rem;">
+                <div class="project-panel active">
+                    <div class="project-card">
+                        <div class="project-info">
+                            <div class="project-badge">Cele Finansowe</div>
+                            <h3 class="project-title">Oszczędzaj na Marzenia</h3>
+                            <p class="project-description">
+                                Tworzenie i śledzenie celów oszczędnościowych. Wizualizacja postępów. 
+                                Motywacyjne powiadomienia. Zobacz jak zbliżasz się do swojego celu.
+                            </p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Tworzenie celów</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Wizualizacja postępów</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Motywacyjne powiadomienia</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Śledzenie oszczędności</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-image">
+                            <div class="project-placeholder ilewpadlo-bg">
+                                <div class="project-logo">
+                                    <i class="fas fa-bullseye" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                                    <div style="font-size: 2rem;">Cele</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats" style="margin-top: 4rem;">
+                <div class="stat-item">
+                    <div class="stat-number">📊</div>
+                    <div class="stat-label">Statystyki Premium</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">30</div>
+                    <div class="stat-label">Dni trial Premium</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1.99</div>
+                    <div class="stat-label">PLN/miesiąc Premium</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">O IleWpadło</h2>
+                <p class="section-subtitle">Lekka aplikacja fintech dla studentów</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-description" style="text-align: center; max-width: 900px; margin: 0 auto;">
+                    <p style="font-size: 1.2rem; line-height: 1.9; margin-bottom: 2rem;">
+                        IleWpadło to aplikacja stworzona specjalnie dla studentów i młodych pracowników, 
+                        którzy chcą mieć pełną kontrolę nad swoimi zarobkami i budżetem. 
+                        Szybko oblicz ile naprawdę zarobisz "na rękę" i zarządzaj codziennym budżetem.
+                    </p>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                        <strong>Funkcje Premium:</strong><br>
+                        📊 Szczegółowe statystyki • 📅 Powiadomienia przed dyżurami • 📄 Eksport PDF • 
+                        🎨 Motyw pastelowy • 📤 Udostępnianie wyników
+                    </p>
+                    <div class="project-tech" style="justify-content: center; margin-top: 2rem;">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Hive</span>
+                        <span class="tech-tag">Riverpod</span>
+                        <span class="tech-tag">Table Calendar</span>
+                        <span class="tech-tag">In-App Purchase</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">IleWpadło</span>
+                </div>
+                <p class="footer-text">&copy; 2024 IleWpadło. Wszystkie prawa zastrzeżone.</p>
+                <a href="index.html" class="btn btn-secondary" style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">
+                    ← Powrót do Vizjoly
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

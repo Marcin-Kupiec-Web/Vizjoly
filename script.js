@@ -1,20 +1,27 @@
-// Navigation scroll effect
+// Navigation scroll effect with smooth transitions
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
+let ticking = false;
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+            ticking = false;
+        });
+        ticking = true;
     }
-    
-    lastScroll = currentScroll;
 });
 
-// Smooth scroll for navigation links
+// Smooth scroll for navigation links with offset
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -27,7 +34,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth'
             });
             
-            // Update active nav link
+            // Update active nav link with animation
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
             });
@@ -36,29 +43,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Active navigation link on scroll
+// Active navigation link on scroll with throttling
 const sections = document.querySelectorAll('section[id]');
+let scrollTimeout;
 
 window.addEventListener('scroll', () => {
-    const scrollY = window.pageYOffset;
-    
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        const scrollY = window.pageYOffset;
         
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-    });
+        sections.forEach(section => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 150;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, 10);
 });
 
-// Project tabs functionality
+// Project tabs functionality with smooth transitions
 const tabButtons = document.querySelectorAll('.tab-btn');
 const projectPanels = document.querySelectorAll('.project-panel');
 
@@ -67,14 +78,26 @@ tabButtons.forEach(button => {
         const targetProject = button.getAttribute('data-project');
         
         // Remove active class from all buttons and panels
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        projectPanels.forEach(panel => panel.classList.remove('active'));
+        tabButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.style.transform = 'scale(0.95)';
+        });
+        projectPanels.forEach(panel => {
+            panel.classList.remove('active');
+        });
         
-        // Add active class to clicked button and corresponding panel
+        // Add active class to clicked button with animation
         button.classList.add('active');
+        setTimeout(() => {
+            button.style.transform = 'scale(1)';
+        }, 50);
+        
+        // Show corresponding panel with fade animation
         const targetPanel = document.getElementById(targetProject);
         if (targetPanel) {
-            targetPanel.classList.add('active');
+            setTimeout(() => {
+                targetPanel.classList.add('active');
+            }, 100);
         }
         
         // Scroll to projects section if not visible
@@ -92,7 +115,7 @@ tabButtons.forEach(button => {
     });
 });
 
-// Mobile menu toggle
+// Mobile menu toggle with smooth animation
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -100,6 +123,7 @@ if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         mobileMenuToggle.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
     });
 }
 
@@ -109,69 +133,89 @@ document.querySelectorAll('.nav-link').forEach(link => {
         if (navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
             mobileMenuToggle.classList.remove('active');
+            document.body.style.overflow = '';
         }
     });
 });
 
-// Intersection Observer for animations
+// Advanced Intersection Observer for animations
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.15,
+    rootMargin: '0px 0px -80px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0) scale(1)';
+            }, index * 100);
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe elements for animation
+// Observe elements for animation with staggered effect
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.project-card, .stat-item, .contact-item');
+    const animateElements = document.querySelectorAll('.project-card, .stat-item, .contact-item, .section-header');
     
-    animateElements.forEach(el => {
+    animateElements.forEach((el, index) => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transform = 'translateY(40px) scale(0.95)';
+        el.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        el.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(el);
     });
 });
 
-// Add parallax effect to hero shapes
+// Enhanced parallax effect to hero shapes
+let parallaxTicking = false;
+
 window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const shapes = document.querySelectorAll('.shape');
-    
-    shapes.forEach((shape, index) => {
-        const speed = (index + 1) * 0.5;
-        shape.style.transform = `translate(${scrolled * speed * 0.1}px, ${scrolled * speed * 0.1}px)`;
-    });
+    if (!parallaxTicking) {
+        window.requestAnimationFrame(() => {
+            const scrolled = window.pageYOffset;
+            const shapes = document.querySelectorAll('.shape');
+            
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 0.15;
+                const rotation = scrolled * 0.05;
+                shape.style.transform = `translate(${scrolled * speed * 0.1}px, ${scrolled * speed * 0.1}px) rotate(${rotation}deg)`;
+            });
+            
+            parallaxTicking = false;
+        });
+        parallaxTicking = true;
+    }
 });
 
-// Add hover effect to project cards
+// Enhanced hover effect to project cards with glow
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-5px)';
-        this.style.transition = 'transform 0.3s ease';
+        this.style.transform = 'translateY(-12px) scale(1.01)';
+        this.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
     });
     
     card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
+        this.style.transform = 'translateY(0) scale(1)';
     });
 });
 
-// Stats counter animation
-const animateCounter = (element, target, duration = 2000) => {
-    let start = 0;
+// Enhanced stats counter animation with easing
+const animateCounter = (element, target, duration = 2500) => {
+    const start = 0;
     const increment = target / (duration / 16);
+    let current = start;
     
     const updateCounter = () => {
-        start += increment;
-        if (start < target) {
-            element.textContent = Math.floor(start) + (element.textContent.includes('+') ? '+' : '') + 
+        current += increment;
+        const progress = Math.min(current / target, 1);
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        const value = Math.floor(target * easeOutQuart);
+        
+        if (value < target) {
+            element.textContent = value + (element.textContent.includes('+') ? '+' : '') + 
                                  (element.textContent.includes('%') ? '%' : '');
             requestAnimationFrame(updateCounter);
         } else {
@@ -195,14 +239,145 @@ const statsObserver = new IntersectionObserver((entries) => {
                 if (number) {
                     statNumber.textContent = '0' + (text.includes('+') ? '+' : '') + 
                                            (text.includes('%') ? '%' : '');
-                    animateCounter(statNumber, number, 2000);
+                    setTimeout(() => {
+                        animateCounter(statNumber, number, 2500);
+                    }, 200);
                 }
             }
         }
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.6 });
 
 document.querySelectorAll('.stat-item').forEach(stat => {
     statsObserver.observe(stat);
 });
 
+// Add ripple effect to buttons
+document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => {
+            ripple.remove();
+        }, 600);
+    });
+});
+
+// Add CSS for ripple effect dynamically
+const style = document.createElement('style');
+style.textContent = `
+    .btn {
+        position: relative;
+        overflow: hidden;
+    }
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple-animation 0.6s ease-out;
+        pointer-events: none;
+    }
+    @keyframes ripple-animation {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// Add cursor glow effect on interactive elements
+const interactiveElements = document.querySelectorAll('.btn, .tab-btn, .nav-link, .contact-item, .project-card');
+let mouseX = 0;
+let mouseY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+interactiveElements.forEach(element => {
+    element.addEventListener('mouseenter', function() {
+        this.style.cursor = 'pointer';
+    });
+    
+    element.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Add subtle glow effect based on mouse position
+        this.style.setProperty('--mouse-x', `${x}px`);
+        this.style.setProperty('--mouse-y', `${y}px`);
+    });
+});
+
+// Smooth page load animation
+window.addEventListener('load', () => {
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.5s ease-in';
+    
+    setTimeout(() => {
+        document.body.style.opacity = '1';
+    }, 100);
+});
+
+// Add scroll progress indicator (optional enhancement)
+const createScrollProgress = () => {
+    const progressBar = document.createElement('div');
+    progressBar.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(90deg, #00d4ff, #7c3aed, #ec4899);
+        z-index: 10000;
+        transition: width 0.1s ease;
+        box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    `;
+    document.body.appendChild(progressBar);
+    
+    window.addEventListener('scroll', () => {
+        const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        progressBar.style.width = scrolled + '%';
+    });
+};
+
+createScrollProgress();
+
+// Add typing effect to hero title (optional)
+const addTypingEffect = () => {
+    const titleLine = document.querySelector('.title-line');
+    if (titleLine) {
+        const text = titleLine.textContent;
+        titleLine.textContent = '';
+        titleLine.style.opacity = '1';
+        
+        let i = 0;
+        const typeInterval = setInterval(() => {
+            if (i < text.length) {
+                titleLine.textContent += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(typeInterval);
+            }
+        }, 100);
+    }
+};
+
+// Uncomment to enable typing effect
+// setTimeout(addTypingEffect, 500);
