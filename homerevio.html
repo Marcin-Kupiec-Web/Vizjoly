@@ -321,10 +321,8 @@
             if (!galleryContainer) return;
             
             // Lista obrazów z folderu HomeRevioImages
-            // UWAGA: Jeśli obrazy są w innym folderze, zmień basePath
-            // Dla lokalnego serwera użyj relatywnej ścieżki, np. '../HomeRevioImages/'
-            // Dla GitHub Pages użyj pełnej ścieżki względem roota projektu
-            const basePath = '../HomeRevioImages/';
+            // Obrazy są w folderze HomeRevioImages w projekcie
+            const basePath = 'HomeRevioImages/';
             const imageNames = [
                 'Screenshot_20251118-135850.png',
                 'Screenshot_20251118-135904.png',
