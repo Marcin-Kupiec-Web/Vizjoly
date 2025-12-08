@@ -134,7 +134,7 @@ Strona jest w pełni responsywna i dostosowuje się do:
 
 ## 📝 Licencja
 
-© 2024 Vizioly. Wszystkie prawa zastrzeżone.
+© 2024 Vizjoly
 
 ## 🤝 Wsparcie
 

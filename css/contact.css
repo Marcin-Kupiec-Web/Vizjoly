@@ -11,8 +11,9 @@
 }
 
 .contact-info {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 2.5rem;
 }
 
@@ -109,7 +110,7 @@
 
 @media (max-width: 968px) {
     .contact-info {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 }
 
