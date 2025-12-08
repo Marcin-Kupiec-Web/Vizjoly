@@ -211,6 +211,44 @@ document.addEventListener('DOMContentLoaded', () => {
             el.style.transform = 'none';
         });
     }
+    
+    // Auto-scroll to projects section if hash is present or coming from project page
+    const handleHashScroll = () => {
+        const hash = window.location.hash;
+        if (hash === '#projects') {
+            const projectsSection = document.getElementById('projects');
+            if (projectsSection) {
+                const offsetTop = projectsSection.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                const projectsLink = document.querySelector('a[href="#projects"]');
+                if (projectsLink) {
+                    projectsLink.classList.add('active');
+                }
+            }
+        }
+    };
+    
+    // Check if coming from project page (referrer contains project page name)
+    const referrer = document.referrer;
+    const isFromProjectPage = referrer && (
+        referrer.includes('homerevio.html') || 
+        referrer.includes('ilewpadlo.html') ||
+        referrer.includes('guardtrack.html')
+    );
+    
+    // If coming from project page or hash is present, scroll to projects
+    if (isFromProjectPage || window.location.hash === '#projects') {
+        // Small delay to ensure page is fully rendered
+        setTimeout(handleHashScroll, 100);
+    }
 });
 
 // Enhanced parallax effect to hero shapes with reduced motion support
