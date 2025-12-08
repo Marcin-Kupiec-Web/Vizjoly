@@ -1,0 +1,40 @@
+/* CSS Variables - Wszystkie zmienne w jednym miejscu */
+:root {
+    /* Nowoczesne kolory premium */
+    --primary-color: #00d4ff;
+    --primary-dark: #0099cc;
+    --primary-light: #33ddff;
+    --secondary-color: #7c3aed;
+    --accent-color: #ec4899;
+    --accent-cyan: #06b6d4;
+    --accent-purple: #8b5cf6;
+    
+    /* Dark premium theme */
+    --bg-primary: #0a0e27;
+    --bg-secondary: #0f1422;
+    --bg-tertiary: #1a1f3a;
+    --bg-glass: rgba(255, 255, 255, 0.05);
+    --bg-glass-hover: rgba(255, 255, 255, 0.08);
+    
+    /* Text colors */
+    --text-primary: #ffffff;
+    --text-secondary: #a0aec0;
+    --text-muted: #718096;
+    
+    /* Borders & shadows */
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.3);
+    --shadow-glow-purple: 0 0 30px rgba(124, 58, 237, 0.3);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #ec4899 100%);
+    --gradient-hero: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1422 100%);
+    --gradient-card: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+    --gradient-text: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+    --gradient-accent: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
+}
+

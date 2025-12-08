@@ -313,71 +313,38 @@
     </footer>
 
     <script src="image-viewer.js"></script>
-    <script src="script.js"></script>
-    <script>
+    <script type="module" src="script.js"></script>
+    <script type="module">
+        import { initGallery } from './js/components.js';
+        
         // Inicjalizacja galerii HomeRevio
         document.addEventListener('DOMContentLoaded', () => {
-            const galleryContainer = document.getElementById('homeRevioGallery');
-            if (!galleryContainer) return;
-            
-            // Lista obrazów z folderu HomeRevioImages
-            // Obrazy są w folderze HomeRevioImages w projekcie
-            const basePath = 'HomeRevioImages/';
-            const imageNames = [
-                'Screenshot_20251118-135850.png',
-                'Screenshot_20251118-135904.png',
-                'Screenshot_20251118-135933.png',
-                'Screenshot_20251118-135952.png',
-                'Screenshot_20251118-140013.png',
-                'Screenshot_20251118-140032.png',
-                'Screenshot_20251118-140252.png',
-                'Screenshot_20251118-140306.png',
-                'Screenshot_20251118-140325.png',
-                'Screenshot_20251118-140458.png',
-                'Screenshot_20251118-140509.png',
-                'Screenshot_20251118-140600.png',
-                'Screenshot_20251118-140619.png',
-                'Screenshot_20251118-140629.png'
-            ];
-            
-            const images = imageNames.map(name => basePath + name);
-            
-            // Tworzenie miniatur galerii
-            images.forEach((imageSrc, index) => {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'gallery-item';
-                galleryItem.setAttribute('data-index', index);
-                
-                const img = document.createElement('img');
-                img.src = imageSrc;
-                img.alt = `Zrzut ekranu HomeRevio ${index + 1}`;
-                img.loading = 'lazy';
-                
-                const overlay = document.createElement('div');
-                overlay.className = 'gallery-item-overlay';
-                overlay.innerHTML = '<i class="fas fa-search-plus"></i>';
-                
-                galleryItem.appendChild(img);
-                galleryItem.appendChild(overlay);
-                
-                galleryItem.addEventListener('click', () => {
-                    if (window.homeRevioViewer) {
-                        window.homeRevioViewer.open(index);
-                    }
-                });
-                
-                galleryContainer.appendChild(galleryItem);
+            initGallery({
+                containerId: 'homeRevioGallery',
+                basePath: 'HomeRevioImages/',
+                images: [
+                    'Screenshot_20251118-135850.png',
+                    'Screenshot_20251118-135904.png',
+                    'Screenshot_20251118-135933.png',
+                    'Screenshot_20251118-135952.png',
+                    'Screenshot_20251118-140013.png',
+                    'Screenshot_20251118-140032.png',
+                    'Screenshot_20251118-140252.png',
+                    'Screenshot_20251118-140306.png',
+                    'Screenshot_20251118-140325.png',
+                    'Screenshot_20251118-140458.png',
+                    'Screenshot_20251118-140509.png',
+                    'Screenshot_20251118-140600.png',
+                    'Screenshot_20251118-140619.png',
+                    'Screenshot_20251118-140629.png'
+                ],
+                viewerOptions: {}
             });
             
-            // Inicjalizacja ImageViewer
-            window.homeRevioViewer = new ImageViewer({
-                images: images,
-                enableZoom: true,
-                enableFullscreen: true,
-                enableKeyboard: true,
-                enableThumbnails: true,
-                container: document.body
-            });
+            // Przechowuj viewer w globalnym scope dla kompatybilności
+            if (window.imageViewer) {
+                window.homeRevioViewer = window.imageViewer;
+            }
         });
     </script>
 </body>
