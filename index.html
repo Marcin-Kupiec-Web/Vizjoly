@@ -45,11 +45,77 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-background">
-            <div class="gradient-overlay"></div>
-            <div class="animated-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
+            <div class="circuit-board">
+                <!-- Circuit lines -->
+                <svg class="circuit-svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+                    <defs>
+                        <linearGradient id="pulseGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:rgba(0, 212, 255, 0);stop-opacity:0" />
+                            <stop offset="50%" style="stop-color:rgba(0, 212, 255, 0.8);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:rgba(0, 212, 255, 0);stop-opacity:0" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Horizontal lines -->
+                    <line x1="0" y1="150" x2="400" y2="150" class="circuit-line" />
+                    <line x1="400" y1="150" x2="400" y2="300" class="circuit-line" />
+                    <line x1="400" y1="300" x2="800" y2="300" class="circuit-line" />
+                    <line x1="800" y1="300" x2="800" y2="500" class="circuit-line" />
+                    <line x1="800" y1="500" x2="1200" y2="500" class="circuit-line" />
+                    
+                    <line x1="0" y1="250" x2="300" y2="250" class="circuit-line" />
+                    <line x1="300" y1="250" x2="300" y2="400" class="circuit-line" />
+                    <line x1="300" y1="400" x2="600" y2="400" class="circuit-line" />
+                    <line x1="600" y1="400" x2="600" y2="600" class="circuit-line" />
+                    <line x1="600" y1="600" x2="1200" y2="600" class="circuit-line" />
+                    
+                    <line x1="0" y1="350" x2="500" y2="350" class="circuit-line" />
+                    <line x1="500" y1="350" x2="500" y2="200" class="circuit-line" />
+                    <line x1="500" y1="200" x2="1000" y2="200" class="circuit-line" />
+                    <line x1="1000" y1="200" x2="1000" y2="450" class="circuit-line" />
+                    <line x1="1000" y1="450" x2="1200" y2="450" class="circuit-line" />
+                    
+                    <!-- Vertical lines -->
+                    <line x1="200" y1="0" x2="200" y2="250" class="circuit-line" />
+                    <line x1="200" y1="250" x2="700" y2="250" class="circuit-line" />
+                    <line x1="700" y1="250" x2="700" y2="550" class="circuit-line" />
+                    <line x1="700" y1="550" x2="1200" y2="550" class="circuit-line" />
+                    
+                    <line x1="900" y1="0" x2="900" y2="350" class="circuit-line" />
+                    <line x1="900" y1="350" x2="200" y2="350" class="circuit-line" />
+                    <line x1="200" y1="350" x2="200" y2="650" class="circuit-line" />
+                    <line x1="200" y1="650" x2="1200" y2="650" class="circuit-line" />
+                    
+                    <!-- Nodes -->
+                    <circle cx="400" cy="150" r="4" class="circuit-node" />
+                    <circle cx="400" cy="300" r="4" class="circuit-node" />
+                    <circle cx="800" cy="300" r="4" class="circuit-node" />
+                    <circle cx="800" cy="500" r="4" class="circuit-node" />
+                    <circle cx="300" cy="250" r="4" class="circuit-node" />
+                    <circle cx="300" cy="400" r="4" class="circuit-node" />
+                    <circle cx="600" cy="400" r="4" class="circuit-node" />
+                    <circle cx="600" cy="600" r="4" class="circuit-node" />
+                    <circle cx="500" cy="350" r="4" class="circuit-node" />
+                    <circle cx="500" cy="200" r="4" class="circuit-node" />
+                    <circle cx="1000" cy="200" r="4" class="circuit-node" />
+                    <circle cx="1000" cy="450" r="4" class="circuit-node" />
+                    <circle cx="200" cy="250" r="4" class="circuit-node" />
+                    <circle cx="700" cy="250" r="4" class="circuit-node" />
+                    <circle cx="700" cy="550" r="4" class="circuit-node" />
+                    <circle cx="900" cy="350" r="4" class="circuit-node" />
+                    <circle cx="200" cy="350" r="4" class="circuit-node" />
+                    <circle cx="200" cy="650" r="4" class="circuit-node" />
+                    
+                    <!-- Pulse animations -->
+                    <line x1="0" y1="150" x2="400" y2="150" class="pulse-line pulse-1" />
+                    <line x1="400" y1="300" x2="800" y2="300" class="pulse-line pulse-2" />
+                    <line x1="800" y1="500" x2="1200" y2="500" class="pulse-line pulse-3" />
+                    <line x1="0" y1="250" x2="300" y2="250" class="pulse-line pulse-4" />
+                    <line x1="300" y1="400" x2="600" y2="400" class="pulse-line pulse-5" />
+                    <line x1="600" y1="600" x2="1200" y2="600" class="pulse-line pulse-6" />
+                    <line x1="500" y1="200" x2="1000" y2="200" class="pulse-line pulse-7" />
+                    <line x1="200" y1="250" x2="700" y2="250" class="pulse-line pulse-8" />
+                    <line x1="700" y1="550" x2="1200" y2="550" class="pulse-line pulse-9" />
+                </svg>
             </div>
         </div>
         <div class="container">

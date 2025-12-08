@@ -276,6 +276,7 @@ body::before {
     overflow: hidden;
     padding-top: 80px;
     isolation: isolate;
+    background: var(--bg-primary);
 }
 
 .hero-background {
@@ -285,143 +286,132 @@ body::before {
     right: 0;
     bottom: 0;
     z-index: -1;
+    background: linear-gradient(135deg, #0a0e27 0%, #0f1422 50%, #0a0e27 100%);
 }
 
-.gradient-overlay {
+.circuit-board {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        135deg,
-        #0a0e27 0%,
-        #0d1225 12%,
-        #12182f 25%,
-        #1a1f3a 40%,
-        #151a32 55%,
-        #0f1422 70%,
-        #0c1124 85%,
-        #0a0e27 100%
-    );
-    opacity: 1;
-    animation: gradientShift 15s ease-in-out infinite;
-    will-change: background;
-    transform: translateZ(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-    
-    .gradient-overlay {
-        animation: none;
-    }
-}
-
-@keyframes gradientShift {
-    0%, 100% {
-        background: linear-gradient(
-            135deg,
-            #0a0e27 0%,
-            #0d1225 12%,
-            #12182f 25%,
-            #1a1f3a 40%,
-            #151a32 55%,
-            #0f1422 70%,
-            #0c1124 85%,
-            #0a0e27 100%
-        );
-    }
-    50% {
-        background: linear-gradient(
-            135deg,
-            #0f1422 0%,
-            #12182f 12%,
-            #1a1f3a 25%,
-            #151a32 40%,
-            #0d1225 55%,
-            #0a0e27 70%,
-            #0c1124 85%,
-            #0f1422 100%
-        );
-    }
-}
-
-.animated-shapes {
-    position: absolute;
     width: 100%;
     height: 100%;
+    opacity: 0.35;
     overflow: hidden;
 }
 
-.shape {
+.circuit-svg {
+    width: 100%;
+    height: 100%;
     position: absolute;
-    border-radius: 50%;
-    animation: float 25s infinite ease-in-out;
-    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-    will-change: transform;
-    transform: translateZ(0);
-    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+}
+
+.circuit-line {
+    stroke: rgba(0, 212, 255, 0.15);
+    stroke-width: 1.2;
+    fill: none;
+    stroke-linecap: round;
+    transition: stroke 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.circuit-node {
+    fill: rgba(0, 212, 255, 0.25);
+    transition: fill 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pulse-line {
+    stroke: url(#pulseGradient);
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    opacity: 0;
+}
+
+.pulse-1 {
+    animation: pulseFlow 12s ease-in-out infinite;
+    animation-delay: 0s;
+}
+
+.pulse-2 {
+    animation: pulseFlow 12s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.pulse-3 {
+    animation: pulseFlow 12s ease-in-out infinite;
+    animation-delay: 4s;
+}
+
+.pulse-4 {
+    animation: pulseFlow 12s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.pulse-5 {
+    animation: pulseFlow 12s ease-in-out infinite;
+    animation-delay: 3s;
+}
+
+.pulse-6 {
+    animation: pulseFlow 12s ease-in-out infinite;
+    animation-delay: 5s;
+}
+
+.pulse-7 {
+    animation: pulseFlow 12s ease-in-out infinite;
+    animation-delay: 6s;
+}
+
+.pulse-8 {
+    animation: pulseFlow 12s ease-in-out infinite;
+    animation-delay: 2.5s;
+}
+
+.pulse-9 {
+    animation: pulseFlow 12s ease-in-out infinite;
+    animation-delay: 4.5s;
+}
+
+@keyframes pulseFlow {
+    0% {
+        opacity: 0;
+        stroke-dasharray: 0, 1200;
+    }
+    5% {
+        opacity: 0.8;
+    }
+    15% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 1;
+        stroke-dasharray: 300, 1200;
+    }
+    85% {
+        opacity: 0.8;
+    }
+    95% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        stroke-dasharray: 1200, 1200;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .shape {
+    .pulse-line {
         animation: none;
+        opacity: 0;
     }
-}
-
-.shape-1 {
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, #00f0ff 0%, #00a8cc 40%, transparent 70%);
-    top: -200px;
-    left: -200px;
-    animation-delay: 0s;
-    box-shadow: 0 0 150px rgba(0, 240, 255, 0.8);
-    filter: blur(60px);
-    opacity: 0.6;
-}
-
-.shape-2 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, #9d4edd 0%, #7b2cbf 40%, transparent 70%);
-    bottom: -150px;
-    right: -150px;
-    animation-delay: 8s;
-    box-shadow: 0 0 150px rgba(157, 78, 221, 0.8);
-    filter: blur(60px);
-    opacity: 0.6;
-}
-
-.shape-3 {
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, #ff006e 0%, #d0004b 40%, transparent 70%);
-    top: 50%;
-    right: 15%;
-    animation-delay: 16s;
-    box-shadow: 0 0 150px rgba(255, 0, 110, 0.8);
-    filter: blur(60px);
-    opacity: 0.6;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    
+    .circuit-line {
+        stroke: rgba(0, 212, 255, 0.15);
     }
-    33% {
-        transform: translate3d(50px, -50px, 0) scale(1.15) rotate(120deg);
-    }
-    66% {
-        transform: translate3d(-30px, 40px, 0) scale(0.9) rotate(240deg);
+    
+    .circuit-node {
+        fill: rgba(0, 212, 255, 0.2);
     }
 }
 
@@ -451,28 +441,41 @@ body::before {
     font-weight: 900;
     line-height: 1.1;
     margin-bottom: 0.5rem;
-    background: var(--gradient-text);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
     letter-spacing: -1.5px;
-    text-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
-    animation: glow 3s ease-in-out infinite alternate;
-    will-change: filter;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+    transition: text-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.title-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+    animation: shimmer 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .title-line {
+    .title-line::after {
         animation: none;
-    }
-}
-
-@keyframes glow {
-    from {
-        filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.2));
-    }
-    to {
-        filter: drop-shadow(0 0 12px rgba(124, 58, 237, 0.3));
+        display: none;
     }
 }
 
