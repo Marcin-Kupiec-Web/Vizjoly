@@ -1,1 +1,313 @@
 
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vizjoly - Profesjonalne rozwiązania programistyczne. HomeRevio, IleWpadło, GuardTrack.">
+    <title>Vizjoly - Rozwiązania Programistyczne</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-text">Vizjoly</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#projects" class="nav-link">Projekty</a></li>
+                    <li><a href="#about" class="nav-link">O nas</a></li>
+                    <li><a href="#contact" class="nav-link">Kontakt</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-overlay"></div>
+            <div class="animated-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">Vizjoly</span>
+                    <span class="title-subtitle">Rozwiązania Programistyczne</span>
+                </h1>
+                <p class="hero-description">
+                    Tworzymy innowacyjne aplikacje i systemy, które zmieniają sposób, 
+                    w jaki pracujesz i żyjesz. Od koncepcji do wdrożenia.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Zobacz Projekty</a>
+                    <a href="#contact" class="btn btn-secondary">Skontaktuj się</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nasze Projekty</h2>
+                <p class="section-subtitle">Odkryj nasze najnowsze rozwiązania</p>
+            </div>
+            
+            <div class="projects-tabs">
+                <button class="tab-btn active" data-project="homerevio">
+                    <span class="tab-icon">🏠</span>
+                    <span class="tab-text">HomeRevio</span>
+                </button>
+                <button class="tab-btn" data-project="ilewpadlo">
+                    <span class="tab-icon">📊</span>
+                    <span class="tab-text">IleWpadło</span>
+                </button>
+                <button class="tab-btn" data-project="guardtrack">
+                    <span class="tab-icon">🛡️</span>
+                    <span class="tab-text">GuardTrack</span>
+                </button>
+            </div>
+
+            <div class="projects-content">
+                <!-- HomeRevio Project -->
+                <div class="project-panel active" id="homerevio">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder homerevio-bg">
+                                <div class="project-logo">HomeRevio</div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badge">Aplikacja Webowa</div>
+                            <h3 class="project-title">HomeRevio</h3>
+                            <p class="project-description">
+                                Nowoczesna platforma do zarządzania nieruchomościami i przeglądu domów. 
+                                HomeRevio umożliwia kompleksowe zarządzanie dokumentacją, harmonogramami 
+                                przeglądów oraz komunikacją z klientami. Intuicyjny interfejs i zaawansowane 
+                                funkcje analityczne sprawiają, że zarządzanie nieruchomościami staje się proste.
+                            </p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Zarządzanie dokumentacją</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Harmonogramy przeglądów</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Panel analityczny</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Komunikacja z klientami</span>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">TypeScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IleWpadło Project -->
+                <div class="project-panel" id="ilewpadlo">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder ilewpadlo-bg">
+                                <div class="project-logo">IleWpadło</div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badge">Aplikacja Mobilna</div>
+                            <h3 class="project-title">IleWpadło</h3>
+                            <p class="project-description">
+                                Inteligentna aplikacja do śledzenia wydatków i analizy finansów osobistych. 
+                                IleWpadło pomaga użytkownikom kontrolować swoje finanse poprzez intuicyjne 
+                                wprowadzanie wydatków, automatyczną kategoryzację oraz szczegółowe raporty 
+                                i wizualizacje. Dzięki zaawansowanym algorytmom użytkownicy mogą lepiej 
+                                zrozumieć swoje nawyki finansowe.
+                            </p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Śledzenie wydatków</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Automatyczna kategoryzacja</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Raporty i wykresy</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Budżetowanie</span>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Chart.js</span>
+                                <span class="tech-tag">Redux</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GuardTrack Project -->
+                <div class="project-panel" id="guardtrack">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-placeholder guardtrack-bg">
+                                <div class="project-logo">GuardTrack</div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badge">System Monitoringu</div>
+                            <h3 class="project-title">GuardTrack</h3>
+                            <p class="project-description">
+                                Zaawansowany system monitoringu i zarządzania bezpieczeństwem. GuardTrack 
+                                oferuje kompleksowe rozwiązanie do śledzenia, raportowania i zarządzania 
+                                operacjami bezpieczeństwa w czasie rzeczywistym. System umożliwia 
+                                monitorowanie patroli, zarządzanie zdarzeniami oraz generowanie szczegółowych 
+                                raportów dla menedżerów bezpieczeństwa.
+                            </p>
+                            <div class="project-features">
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Monitoring w czasie rzeczywistym</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Zarządzanie patrolami</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Raporty zdarzeń</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Dashboard analityczny</span>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">WebSocket</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">O Vizjoly</h2>
+                    <p class="about-description">
+                        Jesteśmy zespołem pasjonatów programowania, którzy tworzą rozwiązania 
+                        technologiczne na najwyższym poziomie. Nasza misja to dostarczanie 
+                        oprogramowania, które nie tylko spełnia wymagania, ale także przekracza 
+                        oczekiwania klientów.
+                    </p>
+                    <p class="about-description">
+                        Specjalizujemy się w tworzeniu aplikacji webowych, mobilnych oraz systemów 
+                        zarządzających. Każdy projekt traktujemy indywidualnie, dbając o jakość kodu, 
+                        wydajność i doświadczenie użytkownika.
+                    </p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Zrealizowanych projektów</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Lat doświadczenia</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Zadowolonych klientów</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skontaktuj się z nami</h2>
+                <p class="section-subtitle">Masz pytanie? Chętnie odpowiemy!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>kontakt@Vizjoly.pl</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-details">
+                            <h3>Portfolio</h3>
+                            <p>www.Vizjoly.pl</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">Vizjoly</span>
+                </div>
+                <p class="footer-text">&copy; 2024 Vizjoly. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
