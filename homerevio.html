@@ -6,6 +6,7 @@
     <meta name="description" content="HomeRevio - Prywatny menedżer rachunków domowych. Zarządzaj rachunkami bez obaw o prywatność. Dane lokalnie, zaszyfrowane AES-256, zero chmury.">
     <title>HomeRevio - Spokój Twojego Umysłu. Kontrola w Twoich Rękach.</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="image-viewer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -25,6 +26,7 @@
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#features" class="nav-link">Funkcje</a></li>
                     <li><a href="#security" class="nav-link">Bezpieczeństwo</a></li>
+                    <li><a href="#gallery" class="nav-link">Zrzuty ekranowe</a></li>
                     <li><a href="#about" class="nav-link">O aplikacji</a></li>
                     <li><a href="index.html" class="nav-link">← Vizjoly</a></li>
                 </ul>
@@ -250,6 +252,20 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Zrzuty Ekranowe</h2>
+                <p class="section-subtitle">Zobacz HomeRevio w akcji</p>
+            </div>
+            
+            <div class="gallery-grid" id="homeRevioGallery">
+                <!-- Obrazy będą dodane dynamicznie przez JavaScript -->
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="contact-section">
         <div class="container">
@@ -296,7 +312,76 @@
         </div>
     </footer>
 
+    <script src="image-viewer.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Inicjalizacja galerii HomeRevio
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryContainer = document.getElementById('homeRevioGallery');
+            if (!galleryContainer) return;
+            
+            // Lista obrazów z folderu HomeRevioImages
+            // UWAGA: Jeśli obrazy są w innym folderze, zmień basePath
+            // Dla lokalnego serwera użyj relatywnej ścieżki, np. '../HomeRevioImages/'
+            // Dla GitHub Pages użyj pełnej ścieżki względem roota projektu
+            const basePath = '../HomeRevioImages/';
+            const imageNames = [
+                'Screenshot_20251118-135850.png',
+                'Screenshot_20251118-135904.png',
+                'Screenshot_20251118-135933.png',
+                'Screenshot_20251118-135952.png',
+                'Screenshot_20251118-140013.png',
+                'Screenshot_20251118-140032.png',
+                'Screenshot_20251118-140252.png',
+                'Screenshot_20251118-140306.png',
+                'Screenshot_20251118-140325.png',
+                'Screenshot_20251118-140458.png',
+                'Screenshot_20251118-140509.png',
+                'Screenshot_20251118-140600.png',
+                'Screenshot_20251118-140619.png',
+                'Screenshot_20251118-140629.png'
+            ];
+            
+            const images = imageNames.map(name => basePath + name);
+            
+            // Tworzenie miniatur galerii
+            images.forEach((imageSrc, index) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.setAttribute('data-index', index);
+                
+                const img = document.createElement('img');
+                img.src = imageSrc;
+                img.alt = `Zrzut ekranu HomeRevio ${index + 1}`;
+                img.loading = 'lazy';
+                
+                const overlay = document.createElement('div');
+                overlay.className = 'gallery-item-overlay';
+                overlay.innerHTML = '<i class="fas fa-search-plus"></i>';
+                
+                galleryItem.appendChild(img);
+                galleryItem.appendChild(overlay);
+                
+                galleryItem.addEventListener('click', () => {
+                    if (window.homeRevioViewer) {
+                        window.homeRevioViewer.open(index);
+                    }
+                });
+                
+                galleryContainer.appendChild(galleryItem);
+            });
+            
+            // Inicjalizacja ImageViewer
+            window.homeRevioViewer = new ImageViewer({
+                images: images,
+                enableZoom: true,
+                enableFullscreen: true,
+                enableKeyboard: true,
+                enableThumbnails: true,
+                container: document.body
+            });
+        });
+    </script>
 </body>
 </html>
 

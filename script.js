@@ -434,6 +434,8 @@ const createScrollProgress = () => {
 
 createScrollProgress();
 
+// Circuit board interactive enhancement (optional - CSS handles most animations)
+
 // Add typing effect to hero title (optional)
 const addTypingEffect = () => {
     const titleLine = document.querySelector('.title-line');
