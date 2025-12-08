@@ -166,6 +166,32 @@ export function initCounterAnimation() {
         updateCounter();
     };
 
+    const animateCounterDecimal = (element, target, duration = 2500) => {
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+        
+        const updateCounter = () => {
+            current += increment;
+            const progress = Math.min(current / target, 1);
+            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+            const value = target * easeOutQuart;
+            
+            if (value < target) {
+                const originalText = element.textContent;
+                const suffix = originalText.includes('+') ? '+' : (originalText.includes('%') ? '%' : '');
+                element.textContent = value.toFixed(2) + suffix;
+                requestAnimationFrame(updateCounter);
+            } else {
+                const originalText = element.textContent;
+                const suffix = originalText.includes('+') ? '+' : (originalText.includes('%') ? '%' : '');
+                element.textContent = target.toFixed(2) + suffix;
+            }
+        };
+        
+        updateCounter();
+    };
+
     const statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -173,13 +199,25 @@ export function initCounterAnimation() {
                 if (statNumber && !statNumber.classList.contains('animated')) {
                     statNumber.classList.add('animated');
                     const text = statNumber.textContent;
-                    const number = parseInt(text.replace(/\D/g, ''));
-                    if (number) {
+                    // Obsługa liczb dziesiętnych (np. 1.99)
+                    const number = parseFloat(text.replace(/[^\d.]/g, ''));
+                    if (number && !isNaN(number)) {
+                        const isDecimal = text.includes('.');
                         const suffix = text.includes('+') ? '+' : (text.includes('%') ? '%' : '');
-                        statNumber.textContent = '0' + suffix;
-                        setTimeout(() => {
-                            animateCounter(statNumber, number, 2500);
-                        }, 200);
+                        
+                        if (isDecimal) {
+                            // Dla liczb dziesiętnych, zachowaj format
+                            statNumber.textContent = '0.00' + suffix;
+                            setTimeout(() => {
+                                animateCounterDecimal(statNumber, number, 2500);
+                            }, 200);
+                        } else {
+                            // Dla liczb całkowitych, użyj standardowej animacji
+                            statNumber.textContent = '0' + suffix;
+                            setTimeout(() => {
+                                animateCounter(statNumber, number, 2500);
+                            }, 200);
+                        }
                     }
                 }
             }
