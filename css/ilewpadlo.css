@@ -8,6 +8,90 @@
         radial-gradient(circle at 80% 70%, rgba(144, 238, 144, 0.15) 0%, transparent 50%);
 }
 
+/* IleWpadło Banner */
+.ilewpadlo-banner {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ilewpadlo-banner .banner-icon {
+    position: absolute;
+    font-size: 5rem;
+    color: rgba(94, 234, 212, 0.15);
+    animation: floatIconIleWpadlo 18s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(94, 234, 212, 0.2));
+    transition: all 0.6s ease;
+}
+
+.ilewpadlo-banner .banner-icon:hover {
+    color: rgba(94, 234, 212, 0.4);
+    filter: drop-shadow(0 0 30px rgba(94, 234, 212, 0.5));
+    transform: scale(1.2);
+}
+
+.ilewpadlo-banner .banner-icon-1 {
+    top: 12%;
+    left: 12%;
+    animation-delay: 0s;
+}
+
+.ilewpadlo-banner .banner-icon-2 {
+    top: 22%;
+    right: 18%;
+    animation-delay: 1.5s;
+    font-size: 3.8rem;
+}
+
+.ilewpadlo-banner .banner-icon-3 {
+    bottom: 28%;
+    left: 18%;
+    animation-delay: 3s;
+    font-size: 4.2rem;
+}
+
+.ilewpadlo-banner .banner-icon-4 {
+    bottom: 18%;
+    right: 22%;
+    animation-delay: 4.5s;
+    font-size: 3.6rem;
+}
+
+.ilewpadlo-banner .banner-icon-5 {
+    top: 48%;
+    left: 8%;
+    animation-delay: 6s;
+    font-size: 3.4rem;
+}
+
+.ilewpadlo-banner .banner-icon-6 {
+    top: 58%;
+    right: 12%;
+    animation-delay: 7.5s;
+    font-size: 3.7rem;
+}
+
+@keyframes floatIconIleWpadlo {
+    0%, 100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.15;
+    }
+    25% {
+        transform: translateY(-25px) translateX(10px) rotate(3deg);
+        opacity: 0.25;
+    }
+    50% {
+        transform: translateY(-12px) translateX(-8px) rotate(-3deg);
+        opacity: 0.2;
+    }
+    75% {
+        transform: translateY(-20px) translateX(5px) rotate(2deg);
+        opacity: 0.22;
+    }
+}
+
 /* IleWpadło Specific Colors - Mint & Pistachio - Subtle & Less Distracting */
 .ilewpadlo .feature-card-premium:hover {
     transform: translateY(-10px) scale(1.01);
@@ -134,6 +218,35 @@
 @media (prefers-reduced-motion: reduce) {
     .ilewpadlo .feature-image-wrapper {
         animation: none;
+    }
+    
+    .ilewpadlo-banner .banner-icon {
+        animation: none;
+    }
+}
+
+/* Responsive Banner */
+@media (max-width: 768px) {
+    .ilewpadlo-banner .banner-icon {
+        font-size: 2.5rem;
+    }
+    
+    .ilewpadlo-banner .banner-icon-2,
+    .ilewpadlo-banner .banner-icon-5,
+    .ilewpadlo-banner .banner-icon-6 {
+        font-size: 2rem;
+    }
+    
+    .ilewpadlo-banner .banner-icon-3,
+    .ilewpadlo-banner .banner-icon-4 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ilewpadlo-banner .banner-icon {
+        font-size: 1.5rem;
+        opacity: 0.1;
     }
 }
 

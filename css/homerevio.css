@@ -7,6 +7,90 @@
         radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.15) 0%, transparent 50%);
 }
 
+/* HomeRevio Banner */
+.homerevio-banner {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.homerevio-banner .banner-icon {
+    position: absolute;
+    font-size: 5rem;
+    color: rgba(0, 212, 255, 0.15);
+    animation: floatIcon 20s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.2));
+    transition: all 0.6s ease;
+}
+
+.homerevio-banner .banner-icon:hover {
+    color: rgba(0, 212, 255, 0.4);
+    filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.5));
+    transform: scale(1.2);
+}
+
+.homerevio-banner .banner-icon-1 {
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.homerevio-banner .banner-icon-2 {
+    top: 25%;
+    right: 15%;
+    animation-delay: 2s;
+    font-size: 3.5rem;
+}
+
+.homerevio-banner .banner-icon-3 {
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 4s;
+    font-size: 4rem;
+}
+
+.homerevio-banner .banner-icon-4 {
+    bottom: 20%;
+    right: 25%;
+    animation-delay: 6s;
+    font-size: 3.8rem;
+}
+
+.homerevio-banner .banner-icon-5 {
+    top: 50%;
+    left: 5%;
+    animation-delay: 8s;
+    font-size: 3.2rem;
+}
+
+.homerevio-banner .banner-icon-6 {
+    top: 60%;
+    right: 10%;
+    animation-delay: 10s;
+    font-size: 3.5rem;
+}
+
+@keyframes floatIcon {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.15;
+    }
+    25% {
+        transform: translateY(-30px) rotate(5deg);
+        opacity: 0.25;
+    }
+    50% {
+        transform: translateY(-15px) rotate(-5deg);
+        opacity: 0.2;
+    }
+    75% {
+        transform: translateY(-25px) rotate(3deg);
+        opacity: 0.22;
+    }
+}
+
 /* HomeRevio Specific Colors - Subtle & Less Distracting */
 .homerevio .feature-card-premium:hover {
     transform: translateY(-10px) scale(1.01);
@@ -220,6 +304,35 @@
 @media (prefers-reduced-motion: reduce) {
     .feature-image-wrapper {
         animation: none;
+    }
+    
+    .homerevio-banner .banner-icon {
+        animation: none;
+    }
+}
+
+/* Responsive Banner */
+@media (max-width: 768px) {
+    .homerevio-banner .banner-icon {
+        font-size: 2.5rem;
+    }
+    
+    .homerevio-banner .banner-icon-2,
+    .homerevio-banner .banner-icon-5,
+    .homerevio-banner .banner-icon-6 {
+        font-size: 2rem;
+    }
+    
+    .homerevio-banner .banner-icon-3,
+    .homerevio-banner .banner-icon-4 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .homerevio-banner .banner-icon {
+        font-size: 1.5rem;
+        opacity: 0.1;
     }
 }
 
