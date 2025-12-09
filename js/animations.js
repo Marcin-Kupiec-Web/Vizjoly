@@ -25,7 +25,7 @@ export function initScrollAnimations() {
     }, observerOptions);
 
     document.addEventListener('DOMContentLoaded', () => {
-        const animateElements = document.querySelectorAll('.project-card, .stat-item, .contact-item, .section-header');
+        const animateElements = document.querySelectorAll('.project-card-premium, .stat-item, .contact-item, .section-header');
         
         if (!prefersReducedMotion()) {
             animateElements.forEach((el, index) => {
@@ -124,14 +124,12 @@ export function initParallax() {
 export function initProjectCardHover() {
     if (!window.matchMedia('(hover: hover)').matches) return;
 
-    document.querySelectorAll('.project-card').forEach(card => {
+    // Cards now have hover effects in CSS, but we can add additional interactions
+    document.querySelectorAll('.project-card-premium').forEach(card => {
+        // Additional interaction effects can be added here if needed
+        // The main hover effects are now handled by CSS
         card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-12px) scale(1.01)';
-            this.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
+            // Trigger any additional animations if needed
         });
     });
 }

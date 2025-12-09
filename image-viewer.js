@@ -533,3 +533,8 @@ if (typeof module !== 'undefined' && module.exports) {
     module.exports = ImageViewer;
 }
 
+// Export globalnie dla użycia bezpośrednio w HTML
+if (typeof window !== 'undefined') {
+    window.ImageViewer = ImageViewer;
+}
+

@@ -6,13 +6,15 @@
     <meta name="description" content="HomeRevio - Prywatny menedżer rachunków domowych. Zarządzaj rachunkami bez obaw o prywatność. Dane lokalnie, zaszyfrowane AES-256, zero chmury.">
     <title>HomeRevio - Spokój Twojego Umysłu. Kontrola w Twoich Rękach.</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/project-pages.css">
+    <link rel="stylesheet" href="css/homerevio.css">
     <link rel="stylesheet" href="image-viewer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="project-page homerevio">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -81,125 +83,110 @@
                 <p class="section-subtitle">Wszystko czego potrzebujesz do zarządzania rachunkami</p>
             </div>
             
-            <div class="projects-content">
-                <div class="project-panel active">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder homerevio-bg">
-                                <div class="project-logo">
-                                    <i class="fas fa-camera" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                                    <div style="font-size: 2rem;">OCR</div>
-                                </div>
+            <!-- OCR Feature Card -->
+            <div class="feature-card-premium">
+                <div class="feature-card-content">
+                    <div class="feature-image-wrapper">
+                        <i class="fas fa-camera feature-icon-large"></i>
+                        <div class="feature-label-large">OCR</div>
+                    </div>
+                    <div class="feature-info-wrapper">
+                        <div class="feature-badge-premium">Inteligentne Skanowanie</div>
+                        <h3 class="feature-title-premium">Skanuj Faktury OCR</h3>
+                        <p class="feature-description-premium">
+                            Skanuj faktury aparatem telefonu - HomeRevio automatycznie rozpoznaje kwoty, 
+                            terminy płatności, numery IBAN i tytuły przelewów. Wszystko przetwarzane 
+                            lokalnie na urządzeniu - Twoje dane nigdy nie opuszczają telefonu.
+                        </p>
+                        <div class="feature-list-premium">
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Rozpoznawanie tekstu on-device</span>
                             </div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-badge">Inteligentne Skanowanie</div>
-                            <h3 class="project-title">Skanuj Faktury OCR</h3>
-                            <p class="project-description">
-                                Skanuj faktury aparatem telefonu - HomeRevio automatycznie rozpoznaje kwoty, 
-                                terminy płatności, numery IBAN i tytuły przelewów. Wszystko przetwarzane 
-                                lokalnie na urządzeniu - Twoje dane nigdy nie opuszczają telefonu.
-                            </p>
-                            <div class="project-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Rozpoznawanie tekstu on-device</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Automatyczne wyciąganie danych</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>100% lokalne przetwarzanie</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Obsługa PDF i zdjęć</span>
-                                </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Automatyczne wyciąganie danych</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>100% lokalne przetwarzanie</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Obsługa PDF i zdjęć</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="projects-content" style="margin-top: 3rem;">
-                <div class="project-panel active">
-                    <div class="project-card">
-                        <div class="project-info">
-                            <div class="project-badge">Błyskawiczne Płatności</div>
-                            <h3 class="project-title">Kody QR SEPA</h3>
-                            <p class="project-description">
-                                Generuj kody QR SEPA w sekundę. Skanuj w aplikacji bankowej i płać bezpośrednio. 
-                                Kopiuj IBAN, kwotę i tytuł jednym kliknięciem. Zgodność z polskim i europejskim standardem płatności.
-                            </p>
-                            <div class="project-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Generowanie QR SEPA</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Płatność w 2 sekundy</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Kopiowanie danych jednym kliknięciem</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Zgodność z standardem europejskim</span>
-                                </div>
+            <!-- SEPA Feature Card -->
+            <div class="feature-card-premium">
+                <div class="feature-card-content">
+                    <div class="feature-info-wrapper">
+                        <div class="feature-badge-premium">Błyskawiczne Płatności</div>
+                        <h3 class="feature-title-premium">Kody QR SEPA</h3>
+                        <p class="feature-description-premium">
+                            Generuj kody QR SEPA w sekundę. Skanuj w aplikacji bankowej i płać bezpośrednio. 
+                            Kopiuj IBAN, kwotę i tytuł jednym kliknięciem. Zgodność z polskim i europejskim standardem płatności.
+                        </p>
+                        <div class="feature-list-premium">
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Generowanie QR SEPA</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Płatność w 2 sekundy</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Kopiowanie danych jednym kliknięciem</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Zgodność z standardem europejskim</span>
                             </div>
                         </div>
-                        <div class="project-image">
-                            <div class="project-placeholder homerevio-bg">
-                                <div class="project-logo">
-                                    <i class="fas fa-qrcode" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                                    <div style="font-size: 2rem;">SEPA</div>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="feature-image-wrapper">
+                        <i class="fas fa-qrcode feature-icon-large"></i>
+                        <div class="feature-label-large">SEPA</div>
                     </div>
                 </div>
             </div>
 
-            <div class="projects-content" style="margin-top: 3rem;">
-                <div class="project-panel active">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder homerevio-bg">
-                                <div class="project-logo">
-                                    <i class="fas fa-home" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                                    <div style="font-size: 2rem;">Multi-Property</div>
-                                </div>
+            <!-- Multi-Property Feature Card -->
+            <div class="feature-card-premium">
+                <div class="feature-card-content">
+                    <div class="feature-image-wrapper">
+                        <i class="fas fa-home feature-icon-large"></i>
+                        <div class="feature-label-large">Multi-Property</div>
+                    </div>
+                    <div class="feature-info-wrapper">
+                        <div class="feature-badge-premium">Zarządzanie Nieruchomościami</div>
+                        <h3 class="feature-title-premium">Wiele Lokalizacji</h3>
+                        <p class="feature-description-premium">
+                            Zarządzaj wieloma nieruchomościami - dom, biuro, mieszkanie na wynajem. 
+                            Przełączaj się między nimi jednym kliknięciem. Oddzielna księgowość dla każdej lokalizacji. 
+                            Śledź gwarancje i serwis urządzeń w każdym miejscu.
+                        </p>
+                        <div class="feature-list-premium">
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Nieograniczona liczba nieruchomości</span>
                             </div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-badge">Zarządzanie Nieruchomościami</div>
-                            <h3 class="project-title">Wiele Lokalizacji</h3>
-                            <p class="project-description">
-                                Zarządzaj wieloma nieruchomościami - dom, biuro, mieszkanie na wynajem. 
-                                Przełączaj się między nimi jednym kliknięciem. Oddzielna księgowość dla każdej lokalizacji. 
-                                Śledź gwarancje i serwis urządzeń w każdym miejscu.
-                            </p>
-                            <div class="project-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Nieograniczona liczba nieruchomości</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Zarządzanie urządzeniami</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Gwarancje i terminy przeglądu</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Historia serwisów</span>
-                                </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Zarządzanie urządzeniami</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Gwarancje i terminy przeglądu</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Historia serwisów</span>
                             </div>
                         </div>
                     </div>
@@ -217,33 +204,31 @@
             </div>
             
             <div class="about-content">
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number">AES-256</div>
-                        <div class="stat-label">Szyfrowanie wojskowe</div>
+                <div class="security-stats-premium">
+                    <div class="security-stat-card">
+                        <div class="security-stat-number">AES-256</div>
+                        <div class="security-stat-label">Szyfrowanie wojskowe</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">0%</div>
-                        <div class="stat-label">Danych w chmurze</div>
+                    <div class="security-stat-card">
+                        <div class="security-stat-number">0%</div>
+                        <div class="security-stat-label">Danych w chmurze</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Lokalne przetwarzanie</div>
+                    <div class="security-stat-card">
+                        <div class="security-stat-number">100%</div>
+                        <div class="security-stat-label">Lokalne przetwarzanie</div>
                     </div>
                 </div>
 
-                <div class="about-description" style="margin-top: 3rem; text-align: center;">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-primary);">
-                        🏰 Fort Knox w Twoim Telefonie
-                    </h3>
-                    <p style="font-size: 1.2rem; line-height: 1.9; margin-bottom: 2rem;">
+                <div class="security-features-list">
+                    <h3>🏰 Fort Knox w Twoim Telefonie</h3>
+                    <p>
                         <strong>🔐 Szyfrowanie AES-256</strong> - Stopień wojskowy, takie jak w bankach<br>
                         <strong>🔑 Klucze w Secure Enclave</strong> - Android Keystore / iOS Keychain<br>
                         <strong>📱 Zero Chmury</strong> - Dane przechowywane tylko lokalnie<br>
                         <strong>🧠 OCR Lokalny</strong> - ML Kit przetwarza faktury BEZ wysyłania do chmury<br>
                         <strong>👁️ Zero Śledzenia</strong> - Bez analityki, bez reklam, bez profilowania
                     </p>
-                    <p style="font-size: 1.1rem; color: var(--text-secondary);">
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-top: 2rem;">
                         Twoje finansowe dane - IBAN, kwoty, faktury - nigdy nie opuszczają Twojego telefonu. 
                         HomeRevio to jedyna aplikacja, która gwarantuje pełną prywatność.
                     </p>
@@ -267,31 +252,29 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="contact-section">
+    <section id="about" class="about-section-premium">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">O HomeRevio</h2>
                 <p class="section-subtitle">Prywatny menedżer rachunków domowych</p>
             </div>
             
-            <div class="about-content">
-                <div class="about-description" style="text-align: center; max-width: 900px; margin: 0 auto;">
-                    <p style="font-size: 1.2rem; line-height: 1.9; margin-bottom: 2rem;">
-                        HomeRevio to więcej niż aplikacja - to system, który daje Ci spokój psychiczny. 
-                        Przestań się martwić o swoje rachunki. Wszystko pod kontrolą, wszystko w jednym miejscu, 
-                        wszystko bezpieczne.
-                    </p>
-                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
-                        <strong>Dla kogo?</strong><br>
-                        👨‍👩‍👧‍👦 Rodziny • 🏢 Wynajmujący • 🔒 Privacy Advocates • 💼 Przedsiębiorcy
-                    </p>
-                    <div class="project-tech" style="justify-content: center; margin-top: 2rem;">
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">SQLCipher</span>
-                        <span class="tech-tag">ML Kit</span>
-                        <span class="tech-tag">AES-256</span>
-                        <span class="tech-tag">Privacy-First</span>
-                    </div>
+            <div class="about-content-premium">
+                <p class="about-description-premium">
+                    HomeRevio to więcej niż aplikacja - to system, który daje Ci spokój psychiczny. 
+                    Przestań się martwić o swoje rachunki. Wszystko pod kontrolą, wszystko w jednym miejscu, 
+                    wszystko bezpieczne.
+                </p>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    <strong style="color: var(--text-primary);">Dla kogo?</strong><br>
+                    👨‍👩‍👧‍👦 Rodziny • 🏢 Wynajmujący • 🔒 Privacy Advocates • 💼 Przedsiębiorcy
+                </p>
+                <div class="about-tech-premium">
+                    <span class="tech-tag">Flutter</span>
+                    <span class="tech-tag">SQLCipher</span>
+                    <span class="tech-tag">ML Kit</span>
+                    <span class="tech-tag">AES-256</span>
+                    <span class="tech-tag">Privacy-First</span>
                 </div>
             </div>
         </div>
@@ -317,8 +300,15 @@
     <script type="module">
         import { initGallery } from './js/components.js';
         
-        // Inicjalizacja galerii HomeRevio
-        document.addEventListener('DOMContentLoaded', () => {
+        // Inicjalizacja galerii HomeRevio - czekaj aż wszystko się załaduje
+        function initializeHomeRevioGallery() {
+            const container = document.getElementById('homeRevioGallery');
+            if (!container) {
+                console.error('Gallery container not found, retrying...');
+                setTimeout(initializeHomeRevioGallery, 100);
+                return;
+            }
+            
             initGallery({
                 containerId: 'homeRevioGallery',
                 basePath: 'HomeRevioImages/',
@@ -340,12 +330,13 @@
                 ],
                 viewerOptions: {}
             });
-            
-            // Przechowuj viewer w globalnym scope dla kompatybilności
-            if (window.imageViewer) {
-                window.homeRevioViewer = window.imageViewer;
-            }
-        });
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeHomeRevioGallery);
+        } else {
+            initializeHomeRevioGallery();
+        }
     </script>
 </body>
 </html>

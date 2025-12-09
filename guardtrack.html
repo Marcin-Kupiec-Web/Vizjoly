@@ -6,12 +6,14 @@
     <meta name="description" content="GuardTrack - Mobile-first aplikacja do zarządzania zgodnością z NIST CSF 2.0 i NIS2. Dla audytorów i firm. Offline-first, pełna baza kontrolek, rejestr ryzyka, raporty PDF.">
     <title>GuardTrack - Zarządzanie Zgodnością Cyberbezpieczeństwa</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/project-pages.css">
+    <link rel="stylesheet" href="css/guardtrack.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="project-page guardtrack">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -81,96 +83,84 @@
                 <p class="section-subtitle">Wybierz wersję dopasowaną do Twoich potrzeb</p>
             </div>
             
-            <div class="projects-content">
-                <div class="project-panel active">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder guardtrack-bg">
-                                <div class="project-logo">
-                                    <i class="fas fa-user-shield" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                                    <div style="font-size: 2rem;">Audytor</div>
-                                </div>
+            <div class="feature-card-premium">
+                <div class="feature-card-content">
+                    <div class="feature-image-wrapper">
+                        <i class="fas fa-user-shield feature-icon-large"></i>
+                        <div class="feature-label-large">Audytor</div>
+                    </div>
+                    <div class="feature-info-wrapper">
+                        <div class="feature-badge-premium">GuardTrack-Audytor</div>
+                        <h3 class="feature-title-premium">Dla Audytorów i Konsultantów</h3>
+                        <p class="feature-description-premium">
+                            Profesjonalne narzędzie dla audytorów cyberbezpieczeństwa i konsultantów ds. zgodności. 
+                            Prowadź audyty w terenie, zbieraj dowody (PDF, zdjęcia, audio), zarządzaj wieloma projektami 
+                            jednocześnie. Synchronizuj dane z serwerem, generuj szczegółowe raporty zgodności. 
+                            Idealne dla firm konsultingowych i niezależnych audytorów.
+                        </p>
+                        <div class="feature-list-premium">
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Audyt offline w terenie</span>
                             </div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-badge">GuardTrack-Audytor</div>
-                            <h3 class="project-title">Dla Audytorów i Konsultantów</h3>
-                            <p class="project-description">
-                                Profesjonalne narzędzie dla audytorów cyberbezpieczeństwa i konsultantów ds. zgodności. 
-                                Prowadź audyty w terenie, zbieraj dowody (PDF, zdjęcia, audio), zarządzaj wieloma projektami 
-                                jednocześnie. Synchronizuj dane z serwerem, generuj szczegółowe raporty zgodności. 
-                                Idealne dla firm konsultingowych i niezależnych audytorów.
-                            </p>
-                            <div class="project-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Audyt offline w terenie</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Zarządzanie wieloma projektami</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Synchronizacja z serwerem</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Zaawansowane raporty PDF</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Zbieranie dowodów (PDF, zdjęcia, audio)</span>
-                                </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Zarządzanie wieloma projektami</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Synchronizacja z serwerem</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Zaawansowane raporty PDF</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Zbieranie dowodów (PDF, zdjęcia, audio)</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="projects-content" style="margin-top: 3rem;">
-                <div class="project-panel active">
-                    <div class="project-card">
-                        <div class="project-info">
-                            <div class="project-badge">GuardTrack-Firma</div>
-                            <h3 class="project-title">Dla Firm i Organizacji</h3>
-                            <p class="project-description">
-                                Kompleksowe rozwiązanie dla małych i średnich firm, które chcą zarządzać zgodnością 
-                                cyberbezpieczeństwa wewnętrznie. Monitoruj status zgodności z NIST CSF 2.0 i NIS2, 
-                                zarządzaj ryzykami, śledź postępy w realizacji zadań. Wszystko w jednym miejscu, 
-                                dostępne offline, z możliwością synchronizacji między urządzeniami.
-                            </p>
-                            <div class="project-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Zarządzanie zgodnością wewnętrzną</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Rejestr ryzyka cyberbezpieczeństwa</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Automatyczne generowanie zadań z luk</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Dashboard zgodności w czasie rzeczywistym</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Synchronizacja między urządzeniami</span>
-                                </div>
+            <div class="feature-card-premium" style="margin-top: 2.5rem;">
+                <div class="feature-card-content">
+                    <div class="feature-info-wrapper">
+                        <div class="feature-badge-premium">GuardTrack-Firma</div>
+                        <h3 class="feature-title-premium">Dla Firm i Organizacji</h3>
+                        <p class="feature-description-premium">
+                            Kompleksowe rozwiązanie dla małych i średnich firm, które chcą zarządzać zgodnością 
+                            cyberbezpieczeństwa wewnętrznie. Monitoruj status zgodności z NIST CSF 2.0 i NIS2, 
+                            zarządzaj ryzykami, śledź postępy w realizacji zadań. Wszystko w jednym miejscu, 
+                            dostępne offline, z możliwością synchronizacji między urządzeniami.
+                        </p>
+                        <div class="feature-list-premium">
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Zarządzanie zgodnością wewnętrzną</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Rejestr ryzyka cyberbezpieczeństwa</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Automatyczne generowanie zadań z luk</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Dashboard zgodności w czasie rzeczywistym</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Synchronizacja między urządzeniami</span>
                             </div>
                         </div>
-                        <div class="project-image">
-                            <div class="project-placeholder guardtrack-bg">
-                                <div class="project-logo">
-                                    <i class="fas fa-building" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                                    <div style="font-size: 2rem;">Firma</div>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="feature-image-wrapper">
+                        <i class="fas fa-building feature-icon-large"></i>
+                        <div class="feature-label-large">Firma</div>
                     </div>
                 </div>
             </div>
@@ -185,173 +175,149 @@
                 <p class="section-subtitle">Wszystko czego potrzebujesz do zarządzania zgodnością</p>
             </div>
             
-            <div class="projects-content">
-                <div class="project-panel active">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder guardtrack-bg">
-                                <div class="project-logo">
-                                    <i class="fas fa-shield-alt" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                                    <div style="font-size: 2rem;">NIST CSF 2.0</div>
-                                </div>
+            <div class="feature-card-premium">
+                <div class="feature-card-content">
+                    <div class="feature-image-wrapper">
+                        <i class="fas fa-shield-alt feature-icon-large"></i>
+                        <div class="feature-label-large">NIST CSF 2.0</div>
+                    </div>
+                    <div class="feature-info-wrapper">
+                        <div class="feature-badge-premium">Pełna Baza Kontrolek</div>
+                        <h3 class="feature-title-premium">NIST CSF 2.0 i NIS2</h3>
+                        <p class="feature-description-premium">
+                            Kompletna baza kontrolek NIST Cybersecurity Framework 2.0 z opisami w języku polskim i angielskim. 
+                            Pełne mapowanie wymagań dyrektywy NIS2. Wszystkie kontrolki dostępne offline, z możliwością 
+                            wyszukiwania, filtrowania i kategoryzacji. Szczegółowe opisy, wytyczne implementacji i powiązania 
+                            między kontrolkami.
+                        </p>
+                        <div class="feature-list-premium">
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Pełna baza kontrolek NIST CSF 2.0</span>
                             </div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-badge">Pełna Baza Kontrolek</div>
-                            <h3 class="project-title">NIST CSF 2.0 i NIS2</h3>
-                            <p class="project-description">
-                                Kompletna baza kontrolek NIST Cybersecurity Framework 2.0 z opisami w języku polskim i angielskim. 
-                                Pełne mapowanie wymagań dyrektywy NIS2. Wszystkie kontrolki dostępne offline, z możliwością 
-                                wyszukiwania, filtrowania i kategoryzacji. Szczegółowe opisy, wytyczne implementacji i powiązania 
-                                między kontrolkami.
-                            </p>
-                            <div class="project-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Pełna baza kontrolek NIST CSF 2.0</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Wymagania dyrektywy NIS2</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Opisy w języku polskim i angielskim</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Mapowanie między standardami</span>
-                                </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Wymagania dyrektywy NIS2</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Opisy w języku polskim i angielskim</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Mapowanie między standardami</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="projects-content" style="margin-top: 3rem;">
-                <div class="project-panel active">
-                    <div class="project-card">
-                        <div class="project-info">
-                            <div class="project-badge">Zarządzanie Ryzykiem</div>
-                            <h3 class="project-title">Rejestr Ryzyka</h3>
-                            <p class="project-description">
-                                Profesjonalny rejestr ryzyka cyberbezpieczeństwa z oceną prawdopodobieństwa i wpływu. 
-                                Automatyczne generowanie zadań z luk zgodności. Priorytetyzacja działań naprawczych. 
-                                Wizualizacja ryzyk na mapie cieplnej. Śledzenie historii zmian i statusu realizacji.
-                            </p>
-                            <div class="project-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Ocena prawdopodobieństwa i wpływu</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Automatyczne generowanie zadań</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Priorytetyzacja działań</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Wizualizacja na mapie cieplnej</span>
-                                </div>
+            <div class="feature-card-premium" style="margin-top: 2.5rem;">
+                <div class="feature-card-content">
+                    <div class="feature-info-wrapper">
+                        <div class="feature-badge-premium">Zarządzanie Ryzykiem</div>
+                        <h3 class="feature-title-premium">Rejestr Ryzyka</h3>
+                        <p class="feature-description-premium">
+                            Profesjonalny rejestr ryzyka cyberbezpieczeństwa z oceną prawdopodobieństwa i wpływu. 
+                            Automatyczne generowanie zadań z luk zgodności. Priorytetyzacja działań naprawczych. 
+                            Wizualizacja ryzyk na mapie cieplnej. Śledzenie historii zmian i statusu realizacji.
+                        </p>
+                        <div class="feature-list-premium">
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Ocena prawdopodobieństwa i wpływu</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Automatyczne generowanie zadań</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Priorytetyzacja działań</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Wizualizacja na mapie cieplnej</span>
                             </div>
                         </div>
-                        <div class="project-image">
-                            <div class="project-placeholder guardtrack-bg">
-                                <div class="project-logo">
-                                    <i class="fas fa-exclamation-triangle" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                                    <div style="font-size: 2rem;">Ryzyka</div>
-                                </div>
+                    </div>
+                    <div class="feature-image-wrapper">
+                        <i class="fas fa-exclamation-triangle feature-icon-large"></i>
+                        <div class="feature-label-large">Ryzyka</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-card-premium" style="margin-top: 2.5rem;">
+                <div class="feature-card-content">
+                    <div class="feature-image-wrapper">
+                        <i class="fas fa-clipboard-check feature-icon-large"></i>
+                        <div class="feature-label-large">Audyt</div>
+                    </div>
+                    <div class="feature-info-wrapper">
+                        <div class="feature-badge-premium">Tryb Audytu Offline</div>
+                        <h3 class="feature-title-premium">Audyt w Terenie</h3>
+                        <p class="feature-description-premium">
+                            Prowadź audyty nawet bez połączenia z internetem. Zbieraj dowody zgodności: 
+                            skanuj dokumenty PDF, rob zdjęcia, nagrywaj audio. Wszystko przechowywane lokalnie, 
+                            zaszyfrowane, z możliwością synchronizacji po powrocie do biura. Idealne dla audytorów 
+                            pracujących w terenie lub w miejscach o ograniczonym dostępie do sieci.
+                        </p>
+                        <div class="feature-list-premium">
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Działa 100% offline</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Zbieranie dowodów (PDF, zdjęcia, audio)</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Zarządzanie zadaniami audytu</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Synchronizacja po powrocie</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="projects-content" style="margin-top: 3rem;">
-                <div class="project-panel active">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder guardtrack-bg">
-                                <div class="project-logo">
-                                    <i class="fas fa-clipboard-check" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                                    <div style="font-size: 2rem;">Audyt</div>
-                                </div>
+            <div class="feature-card-premium" style="margin-top: 2.5rem;">
+                <div class="feature-card-content">
+                    <div class="feature-info-wrapper">
+                        <div class="feature-badge-premium">Inteligentne Raportowanie</div>
+                        <h3 class="feature-title-premium">Raporty PDF i AI Lokalny</h3>
+                        <p class="feature-description-premium">
+                            Generuj profesjonalne raporty zgodności w formacie PDF bezpośrednio na urządzeniu. 
+                            Lokalny AI pomaga w streszczaniu, podpowiedziach i wyjaśnianiu kontrolek. 
+                            Automatyczne generowanie wykresów, tabel i wizualizacji. Eksport do różnych formatów. 
+                            Wszystko przetwarzane lokalnie - Twoje dane pozostają bezpieczne.
+                        </p>
+                        <div class="feature-list-premium">
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Generowanie raportów PDF lokalnie</span>
                             </div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-badge">Tryb Audytu Offline</div>
-                            <h3 class="project-title">Audyt w Terenie</h3>
-                            <p class="project-description">
-                                Prowadź audyty nawet bez połączenia z internetem. Zbieraj dowody zgodności: 
-                                skanuj dokumenty PDF, rob zdjęcia, nagrywaj audio. Wszystko przechowywane lokalnie, 
-                                zaszyfrowane, z możliwością synchronizacji po powrocie do biura. Idealne dla audytorów 
-                                pracujących w terenie lub w miejscach o ograniczonym dostępie do sieci.
-                            </p>
-                            <div class="project-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Działa 100% offline</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Zbieranie dowodów (PDF, zdjęcia, audio)</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Zarządzanie zadaniami audytu</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Synchronizacja po powrocie</span>
-                                </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>AI lokalny - streszczanie i podpowiedzi</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Automatyczne wykresy i wizualizacje</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Eksport do różnych formatów</span>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="projects-content" style="margin-top: 3rem;">
-                <div class="project-panel active">
-                    <div class="project-card">
-                        <div class="project-info">
-                            <div class="project-badge">Inteligentne Raportowanie</div>
-                            <h3 class="project-title">Raporty PDF i AI Lokalny</h3>
-                            <p class="project-description">
-                                Generuj profesjonalne raporty zgodności w formacie PDF bezpośrednio na urządzeniu. 
-                                Lokalny AI pomaga w streszczaniu, podpowiedziach i wyjaśnianiu kontrolek. 
-                                Automatyczne generowanie wykresów, tabel i wizualizacji. Eksport do różnych formatów. 
-                                Wszystko przetwarzane lokalnie - Twoje dane pozostają bezpieczne.
-                            </p>
-                            <div class="project-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Generowanie raportów PDF lokalnie</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>AI lokalny - streszczanie i podpowiedzi</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Automatyczne wykresy i wizualizacje</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Eksport do różnych formatów</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-image">
-                            <div class="project-placeholder guardtrack-bg">
-                                <div class="project-logo">
-                                    <i class="fas fa-file-pdf" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                                    <div style="font-size: 2rem;">Raporty</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="feature-image-wrapper">
+                        <i class="fas fa-file-pdf feature-icon-large"></i>
+                        <div class="feature-label-large">Raporty</div>
                     </div>
                 </div>
             </div>
@@ -367,26 +333,24 @@
             </div>
             
             <div class="about-content">
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number">NIST CSF 2.0</div>
-                        <div class="stat-label">Pełna baza kontrolek</div>
+                <div class="compliance-stats-grid">
+                    <div class="compliance-stat-card">
+                        <div class="compliance-stat-number">NIST CSF 2.0</div>
+                        <div class="compliance-stat-label">Pełna baza kontrolek</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">NIS2</div>
-                        <div class="stat-label">Wymagania dyrektywy</div>
+                    <div class="compliance-stat-card">
+                        <div class="compliance-stat-number">NIS2</div>
+                        <div class="compliance-stat-label">Wymagania dyrektywy</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Offline-first</div>
+                    <div class="compliance-stat-card">
+                        <div class="compliance-stat-number">100%</div>
+                        <div class="compliance-stat-label">Offline-first</div>
                     </div>
                 </div>
 
-                <div class="about-description" style="margin-top: 3rem; text-align: center;">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-primary);">
-                        🛡️ Profesjonalne Narzędzie do Zarządzania Zgodnością
-                    </h3>
-                    <p style="font-size: 1.2rem; line-height: 1.9; margin-bottom: 2rem;">
+                <div class="compliance-features-list">
+                    <h3>🛡️ Profesjonalne Narzędzie do Zarządzania Zgodnością</h3>
+                    <p>
                         <strong>📋 NIST CSF 2.0</strong> - Kompletna baza kontrolek z opisami PL/EN<br>
                         <strong>🇪🇺 NIS2</strong> - Wymagania dyrektywy NIS2 z mapowaniem<br>
                         <strong>📊 Rejestr Ryzyka</strong> - Zarządzanie ryzykami cyberbezpieczeństwa<br>
@@ -394,7 +358,7 @@
                         <strong>📄 Raporty PDF</strong> - Profesjonalne raporty zgodności<br>
                         <strong>🔒 Bezpieczeństwo</strong> - Dane lokalne, zaszyfrowane
                     </p>
-                    <p style="font-size: 1.1rem; color: var(--text-secondary);">
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-top: 2rem;">
                         GuardTrack to jedyne narzędzie, które łączy pełną bazę kontrolek NIST CSF 2.0 i NIS2 
                         z możliwością pracy offline, zbierania dowodów i generowania raportów - wszystko w jednej aplikacji.
                     </p>

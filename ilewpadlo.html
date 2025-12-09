@@ -6,13 +6,15 @@
     <meta name="description" content="IleWpadło - Lekka aplikacja fintech dla studentów do kontroli zarobków i budżetu. Oblicz ile naprawdę zarobisz na rękę.">
     <title>IleWpadło - Kontrola Zarobków i Budżetu</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/project-pages.css">
+    <link rel="stylesheet" href="css/ilewpadlo.css">
     <link rel="stylesheet" href="image-viewer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="project-page ilewpadlo">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -74,57 +76,51 @@
     </section>
 
     <!-- Calculator Section -->
-    <section id="calculator" class="projects-section">
+    <section id="calculator" class="projects-section calculator-section-premium">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Kalkulator Wynagrodzeń</h2>
                 <p class="section-subtitle">Oblicz ile naprawdę zarobisz na rękę</p>
             </div>
             
-            <div class="projects-content">
-                <div class="project-panel active">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder ilewpadlo-bg">
-                                <div class="project-logo">
-                                    <i class="fas fa-calculator" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                                    <div style="font-size: 2rem;">Kalkulator</div>
-                                </div>
+            <div class="feature-card-premium">
+                <div class="feature-card-content">
+                    <div class="feature-image-wrapper">
+                        <i class="fas fa-calculator feature-icon-large"></i>
+                        <div class="feature-label-large">Kalkulator</div>
+                    </div>
+                    <div class="feature-info-wrapper">
+                        <div class="feature-badge-premium">Wsparcie dla Wszystkich Form</div>
+                        <h3 class="feature-title-premium">Różne Formy Umów</h3>
+                        <p class="feature-description-premium">
+                            IleWpadło obsługuje wszystkie popularne formy współpracy: umowa zlecenie, 
+                            umowa o dzieło, B2B (ryczałt, liniowy, skala podatkowa) oraz umowa o pracę. 
+                            Automatyczne obliczenia składek ZUS, podatku PIT i składki zdrowotnej.
+                        </p>
+                        <div class="feature-list-premium">
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Umowa zlecenie</span>
                             </div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-badge">Wsparcie dla Wszystkich Form</div>
-                            <h3 class="project-title">Różne Formy Umów</h3>
-                            <p class="project-description">
-                                IleWpadło obsługuje wszystkie popularne formy współpracy: umowa zlecenie, 
-                                umowa o dzieło, B2B (ryczałt, liniowy, skala podatkowa) oraz umowa o pracę. 
-                                Automatyczne obliczenia składek ZUS, podatku PIT i składki zdrowotnej.
-                            </p>
-                            <div class="project-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Umowa zlecenie</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Umowa o dzieło</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>B2B (ryczałt/liniowy/skala)</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Umowa o pracę</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Ulga dla młodych (<26 lat)</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Koszty autorskie (do 85 528 zł)</span>
-                                </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Umowa o dzieło</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>B2B (ryczałt/liniowy/skala)</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Umowa o pracę</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Ulga dla młodych (<26 lat)</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Koszty autorskie (do 85 528 zł)</span>
                             </div>
                         </div>
                     </div>
@@ -141,141 +137,123 @@
                 <p class="section-subtitle">Wszystko czego potrzebujesz do kontroli finansów</p>
             </div>
             
-            <div class="projects-content">
-                <div class="project-panel active">
-                    <div class="project-card">
-                        <div class="project-info">
-                            <div class="project-badge">Grafik Dyżurów</div>
-                            <h3 class="project-title">Zarządzanie Dyżurami</h3>
-                            <p class="project-description">
-                                Dodawaj i zarządzaj dyżurami. Automatyczne obliczanie zarobków z grafiku. 
-                                Powiadomienia przed dyżurami (Premium). Eksport do kalendarza i eksport PDF (Premium).
-                            </p>
-                            <div class="project-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Dodawanie i edycja dyżurów</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Automatyczne obliczanie zarobków</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Powiadomienia (Premium)</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Eksport do kalendarza</span>
-                                </div>
+            <div class="feature-card-premium">
+                <div class="feature-card-content">
+                    <div class="feature-info-wrapper">
+                        <div class="feature-badge-premium">Grafik Dyżurów</div>
+                        <h3 class="feature-title-premium">Zarządzanie Dyżurami</h3>
+                        <p class="feature-description-premium">
+                            Dodawaj i zarządzaj dyżurami. Automatyczne obliczanie zarobków z grafiku. 
+                            Powiadomienia przed dyżurami (Premium). Eksport do kalendarza i eksport PDF (Premium).
+                        </p>
+                        <div class="feature-list-premium">
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Dodawanie i edycja dyżurów</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Automatyczne obliczanie zarobków</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Powiadomienia (Premium)</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Eksport do kalendarza</span>
                             </div>
                         </div>
-                        <div class="project-image">
-                            <div class="project-placeholder ilewpadlo-bg">
-                                <div class="project-logo">
-                                    <i class="fas fa-calendar-alt" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                                    <div style="font-size: 2rem;">Grafik</div>
-                                </div>
+                    </div>
+                    <div class="feature-image-wrapper">
+                        <i class="fas fa-calendar-alt feature-icon-large"></i>
+                        <div class="feature-label-large">Grafik</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-card-premium" style="margin-top: 2.5rem;">
+                <div class="feature-card-content">
+                    <div class="feature-image-wrapper">
+                        <i class="fas fa-wallet feature-icon-large"></i>
+                        <div class="feature-label-large">Tryb na życie</div>
+                    </div>
+                    <div class="feature-info-wrapper">
+                        <div class="feature-badge-premium">Budżetowanie</div>
+                        <h3 class="feature-title-premium">Tryb na Życie</h3>
+                        <p class="feature-description-premium">
+                            Obliczanie dziennego budżetu po odjęciu stałych kosztów. Zarządzanie oszczędnościami. 
+                            Kontrola codziennych wydatków. Wiesz dokładnie ile możesz wydać każdego dnia.
+                        </p>
+                        <div class="feature-list-premium">
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Dzienny budżet</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Zarządzanie oszczędnościami</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Kontrola wydatków</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Stałe koszty</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="projects-content" style="margin-top: 3rem;">
-                <div class="project-panel active">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <div class="project-placeholder ilewpadlo-bg">
-                                <div class="project-logo">
-                                    <i class="fas fa-wallet" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                                    <div style="font-size: 2rem;">Tryb na życie</div>
-                                </div>
+            <div class="feature-card-premium" style="margin-top: 2.5rem;">
+                <div class="feature-card-content">
+                    <div class="feature-info-wrapper">
+                        <div class="feature-badge-premium">Cele Finansowe</div>
+                        <h3 class="feature-title-premium">Oszczędzaj na Marzenia</h3>
+                        <p class="feature-description-premium">
+                            Tworzenie i śledzenie celów oszczędnościowych. Wizualizacja postępów. 
+                            Motywacyjne powiadomienia. Zobacz jak zbliżasz się do swojego celu.
+                        </p>
+                        <div class="feature-list-premium">
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Tworzenie celów</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Wizualizacja postępów</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Motywacyjne powiadomienia</span>
+                            </div>
+                            <div class="feature-item-premium">
+                                <i class="fas fa-check-circle feature-item-icon"></i>
+                                <span>Śledzenie oszczędności</span>
                             </div>
                         </div>
-                        <div class="project-info">
-                            <div class="project-badge">Budżetowanie</div>
-                            <h3 class="project-title">Tryb na Życie</h3>
-                            <p class="project-description">
-                                Obliczanie dziennego budżetu po odjęciu stałych kosztów. Zarządzanie oszczędnościami. 
-                                Kontrola codziennych wydatków. Wiesz dokładnie ile możesz wydać każdego dnia.
-                            </p>
-                            <div class="project-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Dzienny budżet</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Zarządzanie oszczędnościami</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Kontrola wydatków</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Stałe koszty</span>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="feature-image-wrapper">
+                        <i class="fas fa-bullseye feature-icon-large"></i>
+                        <div class="feature-label-large">Cele</div>
                     </div>
                 </div>
             </div>
 
-            <div class="projects-content" style="margin-top: 3rem;">
-                <div class="project-panel active">
-                    <div class="project-card">
-                        <div class="project-info">
-                            <div class="project-badge">Cele Finansowe</div>
-                            <h3 class="project-title">Oszczędzaj na Marzenia</h3>
-                            <p class="project-description">
-                                Tworzenie i śledzenie celów oszczędnościowych. Wizualizacja postępów. 
-                                Motywacyjne powiadomienia. Zobacz jak zbliżasz się do swojego celu.
-                            </p>
-                            <div class="project-features">
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Tworzenie celów</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Wizualizacja postępów</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Motywacyjne powiadomienia</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-check-circle feature-icon"></i>
-                                    <span>Śledzenie oszczędności</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-image">
-                            <div class="project-placeholder ilewpadlo-bg">
-                                <div class="project-logo">
-                                    <i class="fas fa-bullseye" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                                    <div style="font-size: 2rem;">Cele</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="premium-stats-grid">
+                <div class="premium-stat-card">
+                    <div class="premium-stat-number">📊</div>
+                    <div class="premium-stat-label">Statystyki Premium</div>
                 </div>
-            </div>
-
-            <div class="stats" style="margin-top: 4rem;">
-                <div class="stat-item">
-                    <div class="stat-number">📊</div>
-                    <div class="stat-label">Statystyki Premium</div>
+                <div class="premium-stat-card">
+                    <div class="premium-stat-number">30</div>
+                    <div class="premium-stat-label">Dni trial Premium</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">30</div>
-                    <div class="stat-label">Dni trial Premium</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">1.99</div>
-                    <div class="stat-label">PLN/miesiąc Premium</div>
+                <div class="premium-stat-card">
+                    <div class="premium-stat-number">1.99</div>
+                    <div class="premium-stat-label">PLN/miesiąc Premium</div>
                 </div>
             </div>
         </div>
@@ -347,8 +325,15 @@
     <script type="module">
         import { initGallery } from './js/components.js';
         
-        // Inicjalizacja galerii IleWpadło
-        document.addEventListener('DOMContentLoaded', () => {
+        // Inicjalizacja galerii IleWpadło - czekaj aż wszystko się załaduje
+        function initializeIleWpadloGallery() {
+            const container = document.getElementById('ileWpadloGallery');
+            if (!container) {
+                console.error('Gallery container not found, retrying...');
+                setTimeout(initializeIleWpadloGallery, 100);
+                return;
+            }
+            
             initGallery({
                 containerId: 'ileWpadloGallery',
                 basePath: 'ileWpadlo/',
@@ -368,12 +353,13 @@
                 ],
                 viewerOptions: {}
             });
-            
-            // Przechowuj viewer w globalnym scope dla kompatybilności
-            if (window.imageViewer) {
-                window.ileWpadloViewer = window.imageViewer;
-            }
-        });
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeIleWpadloGallery);
+        } else {
+            initializeIleWpadloGallery();
+        }
     </script>
 </body>
 </html>
