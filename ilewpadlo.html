@@ -6,6 +6,7 @@
     <meta name="description" content="IleWpadło - Lekka aplikacja fintech dla studentów do kontroli zarobków i budżetu. Oblicz ile naprawdę zarobisz na rękę.">
     <title>IleWpadło - Kontrola Zarobków i Budżetu</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="image-viewer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -25,6 +26,7 @@
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#calculator" class="nav-link">Kalkulator</a></li>
                     <li><a href="#features" class="nav-link">Funkcje</a></li>
+                    <li><a href="#gallery" class="nav-link">Zrzuty ekranowe</a></li>
                     <li><a href="#about" class="nav-link">O aplikacji</a></li>
                     <li><a href="index.html#projects" class="nav-link">← Vizjoly</a></li>
                 </ul>
@@ -279,6 +281,20 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Zrzuty Ekranowe</h2>
+                <p class="section-subtitle">Zobacz IleWpadło w akcji</p>
+            </div>
+            
+            <div class="gallery-grid" id="ileWpadloGallery">
+                <!-- Obrazy będą dodane dynamicznie przez JavaScript -->
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="contact-section">
         <div class="container">
@@ -326,7 +342,39 @@
         </div>
     </footer>
 
+    <script src="image-viewer.js"></script>
     <script type="module" src="script.js"></script>
+    <script type="module">
+        import { initGallery } from './js/components.js';
+        
+        // Inicjalizacja galerii IleWpadło
+        document.addEventListener('DOMContentLoaded', () => {
+            initGallery({
+                containerId: 'ileWpadloGallery',
+                basePath: 'ileWpadlo/',
+                images: [
+                    'Screenshot_20251209-173206.png',
+                    'Screenshot_20251209-173218.png',
+                    'Screenshot_20251209-173227.png',
+                    'Screenshot_20251209-173244.png',
+                    'Screenshot_20251209-173311.png',
+                    'Screenshot_20251209-173324.png',
+                    'Screenshot_20251209-173332.png',
+                    'Screenshot_20251209-173429.png',
+                    'Screenshot_20251209-173440.png',
+                    'Screenshot_20251209-173453.png',
+                    'Screenshot_20251209-173504.png',
+                    'Screenshot_20251209-173522.png'
+                ],
+                viewerOptions: {}
+            });
+            
+            // Przechowuj viewer w globalnym scope dla kompatybilności
+            if (window.imageViewer) {
+                window.ileWpadloViewer = window.imageViewer;
+            }
+        });
+    </script>
 </body>
 </html>
 
